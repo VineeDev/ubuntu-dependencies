@@ -16,21 +16,21 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 		echo "Ubuntu/Debian Linux detected."
 		$MAKE_ME_ROOT apt update
 		$MAKE_ME_ROOT apt install -y cmake pkg-config libssl-dev git gcc build-essential git clang libclang-dev
-        echo "Installing VS code in ubuntu"
-        $MAKE_ME_ROOT snap install --classic code
-        echo "Installing docker in ubuntu"
-        $MAKE_ME_ROOT apt install docker.io
-        systemctl start docker
-        systemctl enable docker
-        echo "Installing NVM (Node Version Manager) in Ubuntu"
-        curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
-        export NVM_DIR="$HOME/.nvm"
-        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  #This loads nvm
-        nvm install v16.15.0
-        nvm use v16.15.0
-        echo "Installing Chrome"
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        $MAKE_ME_ROOT apt install ./google-chrome-stable_current_amd64.deb
+		echo "Installing VS code in ubuntu"
+		$MAKE_ME_ROOT snap install --classic code
+		echo "Installing docker in ubuntu"
+		$MAKE_ME_ROOT apt install docker.io
+		systemctl start docker
+		systemctl enable docker
+		echo "Installing NVM (Node Version Manager) in Ubuntu"
+		curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+		export NVM_DIR="$HOME/.nvm"
+		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  #This loads nvm
+		nvm install v16.15.0
+		nvm use v16.15.0
+		echo "Installing Chrome"
+		wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+		$MAKE_ME_ROOT apt install ./google-chrome-stable_current_amd64.deb
 	else
 		echo "Unknown Linux distribution."
 		echo "This OS is not supported with this script at present. Sorry."
