@@ -1,5 +1,5 @@
 ### Bash script to install Ubuntu dependencies in one go.
-Bash script to install all basic dependencies(Such as Docker, VS Code and nodeJS) in Ubuntu.
+Bash script to install all basic dependencies (Such as Docker, VS Code and nodeJS) in Ubuntu.
 
 Run the script in terminal 
 ```bash env.sh```
