@@ -28,6 +28,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  #This loads nvm
         nvm install v16.15.0
         nvm use v16.15.0
+        echo "Installing Hardhat"
+        npm install --save-dev hardhat
         echo "Installing Chrome"
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         $MAKE_ME_ROOT apt install ./google-chrome-stable_current_amd64.deb
