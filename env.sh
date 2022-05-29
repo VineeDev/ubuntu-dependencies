@@ -20,6 +20,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 		$MAKE_ME_ROOT snap install --classic code
 		echo "Installing docker in ubuntu"
 		$MAKE_ME_ROOT apt install docker.io
+		# run docker without sudo
+		chown $USER:docker /var/run/docker.sock
+		usermod -aG docker $USER
 		systemctl start docker
 		systemctl enable docker
 		echo "Installing NVM (Node Version Manager) in Ubuntu"
@@ -31,6 +34,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 		echo "Installing Chrome"
 		wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 		$MAKE_ME_ROOT apt install ./google-chrome-stable_current_amd64.deb
+		echo "install git"
+		$MAKE_ME_ROOT apt install git
 	else
 		echo "Unknown Linux distribution."
 		echo "This OS is not supported with this script at present. Sorry."
